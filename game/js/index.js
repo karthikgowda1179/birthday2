@@ -23,26 +23,15 @@
       this.rightGuesses = [];
       this.guessForm = $(".guessForm");
       this.guessLetterInput = $(".guessLetter");
-      this.goodSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3");
-      this.badSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3");
-      this.winSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3");
-      this.loseSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
       this.setup();
     },
 
     setup: function(){
       this.binding();
-      this.sounds();
       this.showGuess();
       this.showWrong();
     },
 
-    sounds: function(){
-      this.badSound.volume = 0.4;
-      this.goodSound.volume = 0.4;
-      this.winSound.volume = 0.8;
-      this.loseSound.volume = 0.4;
-    },
 
     binding: function(){
       this.guessForm.on("submit", this.theGuess.bind(this));
